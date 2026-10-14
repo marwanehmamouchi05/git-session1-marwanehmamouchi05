@@ -31,3 +31,6 @@ The `feature/about` branch adds an About section and is merged into `main`.
 Local settings and ordinary logs are ignored; `important.log` stays tracked.
 
 Reference: [Official Git documentation](https://git-scm.com/doc).
+## Remote synchronization exercise
+This section was added directly on GitHub to practice fetching first,
+checking that origin/main is ahead, and then pulling the change locally.

@@ -19,3 +19,8 @@ section {
   padding: 20px;
   border: 1px solid #e3e3e3;
 }
+
+#status-message {
+  color: #216e39;
+  font-weight: bold;
+}

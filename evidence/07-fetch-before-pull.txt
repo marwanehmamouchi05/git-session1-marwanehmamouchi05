@@ -1,0 +1,23 @@
+From https://github.com/marwanehmamouchi05/git-session1-marwanehmamouchi05
+   947adfd..f0f362d  main       -> origin/main
+## main...origin/main [behind 1]
+
+Ahead / behind counts:
+0	1
+f0f362d Document remote synchronization exercise on GitHub
+
+Local README vs fetched README:
+diff --git a/README.md b/README.md
+index 4d44533..f6c747b 100644
+--- a/README.md
++++ b/README.md
+@@ -31,3 +31,6 @@ The `feature/about` branch adds an About section and is merged into `main`.
+ Local settings and ordinary logs are ignored; `important.log` stays tracked.
+ 
+ Reference: [Official Git documentation](https://git-scm.com/doc).
++## Remote synchronization exercise
++This section was added directly on GitHub to practice fetching first,
++checking that origin/main is ahead, and then pulling the change locally.
+
+Verified: SHA-256 hashes of all project files are unchanged after fetch.
+Verified: local HEAD is unchanged after fetch.

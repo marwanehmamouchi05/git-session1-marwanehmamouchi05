@@ -1,0 +1,9 @@
+*   947adfd (HEAD -> main) Merge About feature into main
+|\  
+| * ad826cb (feature/about) Add About section describing author and lab objectives
+|/  
+* 7470931 Highlight project readiness status in green
+* 8e301ce Update project readiness message independently of styling
+* 4d2ab88 Document author, technologies, setup, and Git workflow
+* 228e663 Ignore local settings and ordinary logs; keep important log
+* 8bf9dce Add provided Session 1 starter project

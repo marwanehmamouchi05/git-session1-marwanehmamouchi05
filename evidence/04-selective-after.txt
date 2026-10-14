@@ -1,0 +1,4 @@
+ M style.css
+8e301ce Update project readiness message independently of styling
+ app.js | 10 +++++-----
+ 1 file changed, 5 insertions(+), 5 deletions(-)

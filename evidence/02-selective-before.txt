@@ -1,0 +1,30 @@
+ M app.js
+ M style.css
+diff --git a/app.js b/app.js
+index 603d28a..e6afb48 100644
+--- a/app.js
++++ b/app.js
+@@ -1,5 +1,5 @@
+-const statusMessage = document.getElementById("status-message");
+-
+-if (statusMessage) {
+-  statusMessage.textContent = "Starter project is ready.";
+-}
++const statusMessage = document.getElementById("status-message");
++
++if (statusMessage) {
++  statusMessage.textContent = "Session 1 project is ready: Git workflow completed.";
++}
+diff --git a/style.css b/style.css
+index b93e076..e9c8817 100644
+--- a/style.css
++++ b/style.css
+@@ -19,3 +19,8 @@ section {
+   padding: 20px;
+   border: 1px solid #e3e3e3;
+ }
++
++#status-message {
++  color: #216e39;
++  font-weight: bold;
++}

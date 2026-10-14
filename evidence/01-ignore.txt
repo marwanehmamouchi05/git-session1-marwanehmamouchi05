@@ -1,0 +1,8 @@
+!! app.log
+!! debug.log
+!! local.env
+.gitignore:1:local.env	local.env
+.gitignore:2:*.log	app.log
+.gitignore:2:*.log	debug.log
+.gitignore:3:!important.log	important.log
+important.log

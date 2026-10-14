@@ -1,0 +1,179 @@
+$ git init -b main
+Initialized empty Git repository in C:/Users/marwa/.codex/.chatgpt-projects/g-p-6ac835fde6f881918611793f57cf7bd4/work/git-session1-marwanehmamouchi05/.git/
+
+$ git config user.name Marwane Hmamouchi
+
+$ git config user.email marwanehmamouchi05@gmail.com
+
+$ git config core.autocrlf false
+
+$ git add index.html style.css app.js assets/project-banner.svg notes.txt important.log
+
+$ git commit -m Add provided Session 1 starter project
+[main (root-commit) 8bf9dce] Add provided Session 1 starter project
+ 6 files changed, 61 insertions(+)
+ create mode 100644 app.js
+ create mode 100644 assets/project-banner.svg
+ create mode 100644 important.log
+ create mode 100644 index.html
+ create mode 100644 notes.txt
+ create mode 100644 style.css
+
+$ git add .gitignore
+
+$ git commit -m Ignore local settings and ordinary logs; keep important log
+[main 228e663] Ignore local settings and ordinary logs; keep important log
+ 1 file changed, 3 insertions(+)
+ create mode 100644 .gitignore
+
+$ git status --short --ignored
+!! app.log
+!! debug.log
+!! local.env
+
+$ git check-ignore -v --no-index local.env app.log debug.log important.log
+.gitignore:1:local.env	local.env
+.gitignore:2:*.log	app.log
+.gitignore:2:*.log	debug.log
+.gitignore:3:!important.log	important.log
+
+$ git ls-files important.log
+important.log
+
+$ git add README.md
+
+$ git commit -m Document author, technologies, setup, and Git workflow
+[main 4d2ab88] Document author, technologies, setup, and Git workflow
+ 1 file changed, 33 insertions(+)
+ create mode 100644 README.md
+
+$ git status --short
+ M app.js
+ M style.css
+
+$ git diff
+diff --git a/app.js b/app.js
+index 603d28a..e6afb48 100644
+--- a/app.js
++++ b/app.js
+@@ -1,5 +1,5 @@
+-const statusMessage = document.getElementById("status-message");
+-
+-if (statusMessage) {
+-  statusMessage.textContent = "Starter project is ready.";
+-}
++const statusMessage = document.getElementById("status-message");
++
++if (statusMessage) {
++  statusMessage.textContent = "Session 1 project is ready: Git workflow completed.";
++}
+diff --git a/style.css b/style.css
+index b93e076..e9c8817 100644
+--- a/style.css
++++ b/style.css
+@@ -19,3 +19,8 @@ section {
+   padding: 20px;
+   border: 1px solid #e3e3e3;
+ }
++
++#status-message {
++  color: #216e39;
++  font-weight: bold;
++}
+
+$ git add app.js
+
+$ git status --short
+M  app.js
+ M style.css
+
+$ git diff --cached
+diff --git a/app.js b/app.js
+index 603d28a..e6afb48 100644
+--- a/app.js
++++ b/app.js
+@@ -1,5 +1,5 @@
+-const statusMessage = document.getElementById("status-message");
+-
+-if (statusMessage) {
+-  statusMessage.textContent = "Starter project is ready.";
+-}
++const statusMessage = document.getElementById("status-message");
++
++if (statusMessage) {
++  statusMessage.textContent = "Session 1 project is ready: Git workflow completed.";
++}
+
+$ git diff
+diff --git a/style.css b/style.css
+index b93e076..e9c8817 100644
+--- a/style.css
++++ b/style.css
+@@ -19,3 +19,8 @@ section {
+   padding: 20px;
+   border: 1px solid #e3e3e3;
+ }
++
++#status-message {
++  color: #216e39;
++  font-weight: bold;
++}
+
+$ git commit -m Update project readiness message independently of styling
+[main 8e301ce] Update project readiness message independently of styling
+ 1 file changed, 5 insertions(+), 5 deletions(-)
+
+$ git status --short
+ M style.css
+
+$ git show --stat --oneline HEAD
+8e301ce Update project readiness message independently of styling
+ app.js | 10 +++++-----
+ 1 file changed, 5 insertions(+), 5 deletions(-)
+
+$ git add style.css
+
+$ git commit -m Highlight project readiness status in green
+[main 7470931] Highlight project readiness status in green
+ 1 file changed, 5 insertions(+)
+
+$ git switch -c feature/about
+Switched to a new branch 'feature/about'
+
+$ git add index.html
+
+$ git commit -m Add About section describing author and lab objectives
+[feature/about ad826cb] Add About section describing author and lab objectives
+ 1 file changed, 32 insertions(+), 26 deletions(-)
+
+$ git switch main
+Switched to branch 'main'
+
+$ git merge --no-ff feature/about -m Merge About feature into main
+Merge made by the 'ort' strategy.
+ index.html | 58 ++++++++++++++++++++++++++++++++--------------------------
+ 1 file changed, 32 insertions(+), 26 deletions(-)
+
+$ git log --graph --oneline --all --decorate
+*   947adfd (HEAD -> main) Merge About feature into main
+|\  
+| * ad826cb (feature/about) Add About section describing author and lab objectives
+|/  
+* 7470931 Highlight project readiness status in green
+* 8e301ce Update project readiness message independently of styling
+* 4d2ab88 Document author, technologies, setup, and Git workflow
+* 228e663 Ignore local settings and ordinary logs; keep important log
+* 8bf9dce Add provided Session 1 starter project
+
+$ git add app.log
+The following paths are ignored by one of your .gitignore files:
+app.log
+hint: Use -f if you really want to add them.
+hint: Disable this message with "git config set advice.addIgnoredFile false"
+
+$ git check-ignore -v app.log
+.gitignore:2:*.log	app.log
+
+$ git ls-files app.log
+
+$ git status --short

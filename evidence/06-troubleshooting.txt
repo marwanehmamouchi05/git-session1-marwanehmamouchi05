@@ -1,0 +1,8 @@
+$ git add app.log
+The following paths are ignored by one of your .gitignore files:
+app.log
+hint: Use -f if you really want to add them.
+hint: Disable this message with "git config set advice.addIgnoredFile false"
+.gitignore:2:*.log	app.log
+
+Resolution: app.log is intentionally ignored. Keep it untracked; do not force-add it.

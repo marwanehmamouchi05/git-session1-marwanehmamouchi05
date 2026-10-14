@@ -1,0 +1,62 @@
+$ git rev-parse HEAD
+947adfd9199d7cae454e5c442a0f4c5743cd13d1
+
+$ git fetch origin
+From https://github.com/marwanehmamouchi05/git-session1-marwanehmamouchi05
+   947adfd..f0f362d  main       -> origin/main
+
+$ git rev-parse HEAD
+947adfd9199d7cae454e5c442a0f4c5743cd13d1
+
+$ git rev-list --left-right --count main...origin/main
+0	1
+
+$ git status -sb
+## main...origin/main [behind 1]
+
+$ git log --oneline main..origin/main
+f0f362d Document remote synchronization exercise on GitHub
+
+$ git diff main origin/main -- README.md
+diff --git a/README.md b/README.md
+index 4d44533..f6c747b 100644
+--- a/README.md
++++ b/README.md
+@@ -31,3 +31,6 @@ The `feature/about` branch adds an About section and is merged into `main`.
+ Local settings and ordinary logs are ignored; `important.log` stays tracked.
+ 
+ Reference: [Official Git documentation](https://git-scm.com/doc).
++## Remote synchronization exercise
++This section was added directly on GitHub to practice fetching first,
++checking that origin/main is ahead, and then pulling the change locally.
+
+$ git pull --ff-only origin main
+Updating 947adfd..f0f362d
+Fast-forward
+ README.md | 3 +++
+ 1 file changed, 3 insertions(+)
+From https://github.com/marwanehmamouchi05/git-session1-marwanehmamouchi05
+ * branch            main       -> FETCH_HEAD
+
+$ git status -sb
+## main...origin/main
+
+$ git push origin feature/about
+remote: 
+remote: Create a pull request for 'feature/about' on GitHub by visiting:        
+remote:      https://github.com/marwanehmamouchi05/git-session1-marwanehmamouchi05/pull/new/feature/about        
+remote: 
+To https://github.com/marwanehmamouchi05/git-session1-marwanehmamouchi05.git
+ * [new branch]      feature/about -> feature/about
+
+$ git log --graph --oneline --all --decorate
+* f0f362d (HEAD -> main, origin/main, origin/HEAD) Document remote synchronization exercise on GitHub
+*   947adfd Merge About feature into main
+|\  
+| * ad826cb (origin/feature/about, feature/about) Add About section describing author and lab objectives
+|/  
+* 7470931 Highlight project readiness status in green
+* 8e301ce Update project readiness message independently of styling
+* 4d2ab88 Document author, technologies, setup, and Git workflow
+* 228e663 Ignore local settings and ordinary logs; keep important log
+* 8bf9dce Add provided Session 1 starter project
